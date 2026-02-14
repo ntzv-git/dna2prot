@@ -10,7 +10,9 @@ Version : 1.0
 
 ## Description
 
-Translate nucleotide sequences. Frame 1 to 3 are translated from the forward strand, and frame 4 to 6 are translated from the reverse strand (using the reverse complement of the forward strand).
+dna2prot is a lightweight Python tool designed to translate nucleotide sequences across all 3 or 6 possible reading frames.
+
+Unlike tools like EMBOSS `getorf` that selectively extract Open Reading Frames (ORFs) bounded by START and STOP codons, this script performs a raw, uninterrupted translation of the entire input sequence from end to end. Whenever it encounters a STOP codon, it simply inserts an asterisk (*) and continues translating the remaining nucleotides without breaking the sequence. This brute-force approach guarantees exactly 3 or 6 continuous protein strings per input, making it ideal for researchers who need to visualize the complete translational landscape of a sequence without any algorithmic filtering or size thresholds.
 
 
 ## Installation
